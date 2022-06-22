@@ -1,0 +1,10 @@
+{
+    "type": "origins:invulnerability",
+    "damage_condition": {
+		"type": "origins:name",
+		"name": "fall"
+    },
+    "name": "Safety Landing",
+    "description": "You are used to landing from hight distances, you won't take fall damage.",
+    "hidden": false
+}

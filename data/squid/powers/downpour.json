@@ -1,0 +1,19 @@
+{
+    "type": "origins:damage_over_time",
+    "interval": 10,
+	"onset_delay": 10,
+    "damage": 1.5,
+    "protection_enchantment": "origins:water_protection",
+    "protection_effectiveness": 0.4,
+    "damage_source": {
+        "name": "hurt_by_water",
+        "unblockable": true,
+        "bypasses_armor": true
+    },
+    "condition": {
+        "type": "origins:in_rain"
+    },
+    "hidden": false,
+    "name": "Downpour",
+    "description": "You will take \u00A7cHEAVY damage\u00A77 while \u00A7bunder the rain\u00A77."
+}

@@ -1,0 +1,87 @@
+{
+    "type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:passenger_action",
+		"recursive": true,
+		"action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @p[sort=nearest] run effect give @p minecraft:saturation 4 0 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:spawn_particles",
+					"particle": {
+						"type": "minecraft:block",
+						"params": "minecraft:redstone_block"
+					},
+					"count": 20,
+					"speed": 0.0,
+					"force": true,
+					"spread": {
+						"x": 0.5,
+						"y": 0.5,
+						"z": 0.5
+					}	
+				},
+				{
+					"type": "origins:damage",
+					"amount": 5,
+					"source": {
+						"name": "generic.player",
+						"bypasses_armor": true,
+						"unblockable": false
+					}
+				},
+				{
+					"type": "origins:apply_effect",
+					"effects": [
+						{
+							"effect": "minecraft:blindness",
+							"duration": 60,
+							"is_ambient": true,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"effect": "minecraft:weakness",
+							"duration": 80,
+							"is_ambient": true,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		}
+	},
+	"cooldown": 600,
+    "hud_render": {
+        "should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 22
+    },
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:passenger",
+				"comparison": ">",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:health",
+				"comparison": ">",
+				"compare_to": 2
+			}
+		]
+	},
+    "hidden": false,
+    "name": "Bite",
+    "description": "Once you grab an entity, you can use your secondary key to 'bite' them, \u00A7cdealing damage\u00A77 and \u00A76feeding yourself greatly\u00A77."
+}

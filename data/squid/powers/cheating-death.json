@@ -1,0 +1,40 @@
+{
+	"type": "origins:prevent_death",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "tellraw @s {\"text\": \"You are hurt, sleep to recover.\", \"color\": \"red\"}",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:change_resource",
+				"resource": "squid:death-var",
+				"operation": "set",
+				"change": 0
+			},
+			{
+				"type": "origins:heal",
+				"amount": 1
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "effect give @s minecraft:resistance 10 255 true",
+				"permission_level": 4	
+			},
+			{
+				"type": "origins:dismount"
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:resource",
+		"resource": "squid:death-var",
+		"comparison": "==",
+		"compare_to": 1
+	},
+	"hidden": false,
+	"name": "Cheating Death",
+	"description": "When about to die, you survive with \u00A79half a heart\u00A77, in this state you cannot attack and \u00A72must go back and sleep in a bed to recover\u00A77. You can still, however regenerate with potions or other means, \u00A75though your wings will be gone until you \u00A7asleep\u00A75 again\u00A77."
+}

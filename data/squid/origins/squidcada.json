@@ -1,0 +1,26 @@
+{
+    "powers": [
+		"origins:carnivore",
+		"origins:more_exhaustion",
+		"origins:fragile",
+		"origins:aerial_combatant",
+		"origins:no_shield",
+		"origins:climbing",
+		"squid:death-var",
+		"squid:cheating-death",
+		"squid:safety-landing",
+        "squid:smaller",
+		"squid:wakeup",
+		"squid:downpour",
+		"squid:lil-body",
+		"squid:fragile-wings",
+		"squid:flap",
+		"squid:bite",
+		"squid:grab",
+		"squid:drop"
+    ],
+    "icon": "minecraft:feather",
+    "impact": 3,
+    "name": "Squidcada",
+    "description": "Squidcadas are cuttlefish-like creatures that flutter across the regions they inhabit with its small wings."
+}

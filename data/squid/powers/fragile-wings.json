@@ -1,0 +1,202 @@
+{
+    "type": "origins:multiple",
+    "show": {
+		"type": "origins:elytra_flight",
+		"render_elytra": true,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": ">=",
+					"compare_to": 8
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+    "damaged": {
+		"type": "origins:prevent_elytra_flight",
+		"condition": {
+			"type": "origins:health",
+			"comparison": "<",
+			"compare_to": 8
+		}
+	},
+	"overlay": {
+		"type": "origins:overlay",
+		"texture": "minecraft:textures/misc/vignette.png",
+		"strength": 1.0,
+		"red": 0.8,
+		"green": 0.3,
+		"blue": 0.3,
+		"draw_mode": "nausea",
+		"draw_phase": "below_hud",
+		"hide_with_hud": false,
+		"visible_in_third_person": true,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"swim": {
+		"type": "origins:swimming",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:on_block"
+				},
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"shake": {
+		"type": "origins:shaking",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"nomove": {
+		"type": "origins:modify_velocity",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.8
+		},
+		"axes": [
+			"x",
+			"z"
+		],
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"nojump": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.8
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"noregen": {
+		"type": "origins:disable_regen",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"effects": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 5,
+		"duration_per_stack": 10,
+		"effects": [
+			{
+				"effect": "minecraft:weakness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": true
+			}
+		],
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": "<=",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:resource",
+					"resource": "squid:death-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"hidden": false,
+	"name": "Fragile Wings",
+	"description": "You can use your wings to \u00A7bflap\u00A77 around for a certain amount of time until you \u00A79slowly descend\u00A77 with your Elytras. \u00A7cIf you are carrying an entity or wearing ANY ARMOR you will not be able to flap. If damaged enough, \u00A74you wont be able to use your wings until you sleep."
+}

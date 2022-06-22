@@ -1,0 +1,29 @@
+{
+    "type": "origins:action_on_entity_use",
+    "bientity_action": {
+        "type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:dismount"
+				}
+			},
+			{
+				"type": "origins:actor_action",
+				"action": {
+					"type": "origins:execute_command",
+					"command": "scale set pehkui:hitbox_height 1 @s",
+					"permission_level": 4
+				}	
+			}
+		]	
+    },
+    "item_condition": {
+        "type": "origins:empty"
+    },
+	"condition": {
+		"type": "origins:sneaking"
+	},
+    "hidden": true
+}
