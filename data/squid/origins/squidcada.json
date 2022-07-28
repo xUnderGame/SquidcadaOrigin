@@ -7,6 +7,7 @@
 		"origins:no_shield",
 		"origins:climbing",
 		"squid:death-var",
+		"squid:grab-var",
 		"squid:cheating-death",
 		"squid:safety-landing",
         "squid:smaller",
@@ -20,7 +21,7 @@
 		"squid:drop"
     ],
     "icon": "minecraft:feather",
-    "impact": 3,
+    "impact": 2,
     "name": "Squidcada",
     "description": "Squidcadas are cuttlefish-like creatures that flutter across the regions they inhabit with its small wings."
 }

@@ -16,6 +16,15 @@
 					"resource": "squid:death-var",
 					"comparison": "==",
 					"compare_to": 1
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+					"type": "origins:armor_value",
+						"comparison": "<",
+						"compare_to": 1
+					}	
 				}
 			]
 		}
@@ -42,28 +51,6 @@
 		"condition": {
 			"type": "origins:and",
 			"conditions": [
-				{
-					"type": "origins:health",
-					"comparison": "<=",
-					"compare_to": 2
-				},
-				{
-					"type": "origins:resource",
-					"resource": "squid:death-var",
-					"comparison": "==",
-					"compare_to": 0
-				}
-			]
-		}
-	},
-	"swim": {
-		"type": "origins:swimming",
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:on_block"
-				},
 				{
 					"type": "origins:health",
 					"comparison": "<=",
@@ -128,7 +115,7 @@
 		"type": "origins:modify_jump",
 		"modifier": {
 			"operation": "multiply_total",
-			"value": -0.8
+			"value": -0.7
 		},
 		"condition": {
 			"type": "origins:and",
@@ -198,5 +185,5 @@
 	},
 	"hidden": false,
 	"name": "Fragile Wings",
-	"description": "You can use your wings to \u00A7bflap\u00A77 around for a certain amount of time until you \u00A79slowly descend\u00A77 with your Elytras. \u00A7cIf you are carrying an entity or wearing ANY ARMOR you will not be able to flap. If damaged enough, \u00A74you wont be able to use your wings until you sleep."
+	"description": "You can use your wings to \u00A7bflap\u00A77 around for a certain amount of time until you \u00A79slowly descend\u00A77 with your Elytras. \u00A7cIf you are carrying an entity or wearing armor higher than iron (Max iron helmet) you will not be able to flap, excluding chestplates, as equipping any type wont let you fly. If damaged enough, \u00A74you wont be able to use your wings until you sleep."
 }

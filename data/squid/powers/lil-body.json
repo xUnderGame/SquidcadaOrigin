@@ -2,21 +2,21 @@
 	"type": "origins:action_on_callback",
 	"entity_action_added": {
 		"type": "origins:execute_command",
-		"command": "execute as @s run function surv:small",
+		"command": "execute as @s run function squid:small",
 		"permission_level": 4
 	},
 	"entity_action_removed": {
 		"type": "origins:execute_command",
-		"command": "execute as @s run function surv:normal",
+		"command": "execute as @s run function squid:normal",
 		"permission_level": 4
 	},
 	"entity_action_respawned": {
 		"type": "origins:execute_command",
-		"command": "execute as @s run function surv:small",
+		"command": "execute as @s run function squid:small",
 		"permission_level": 4
 	},
 	"execute_chosen_when_orb": true,
 	"name": "Lil' Body",
-	"description": "Squidcadas are \u00A7blittle\u00A77, you are half a block tall",
+	"description": "Squidcadas are \u00A7blittle\u00A77, you are 0.7 a blocks tall",
 	"hidden": false
 }

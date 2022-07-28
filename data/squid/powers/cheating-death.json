@@ -25,6 +25,24 @@
 			},
 			{
 				"type": "origins:dismount"
+			},
+			{
+				"type": "origins:drop_inventory",
+				"inventory_type": "inventory",
+				"retain_ownership": true,
+				"throw_randomly": true,
+				"slots": [
+					"weapon.offhand",
+					"hotbar.0",
+					"hotbar.1",
+					"hotbar.2",
+					"hotbar.3",
+					"hotbar.4",
+					"hotbar.5",
+					"hotbar.6",
+					"hotbar.7",
+					"hotbar.8"
+				]
 			}
 		]
 	},
@@ -36,5 +54,5 @@
 	},
 	"hidden": false,
 	"name": "Cheating Death",
-	"description": "When about to die, you survive with \u00A79half a heart\u00A77, in this state you cannot attack and \u00A72must go back and sleep in a bed to recover\u00A77. You can still, however regenerate with potions or other means, \u00A75though your wings will be gone until you \u00A7asleep\u00A75 again\u00A77."
+	"description": "When about to die, you survive with \u00A79half a heart\u00A77, in this state you cannot attack and \u00A72must go back and sleep in a bed to recover\u00A77. You can still, however regenerate with potions or other means, \u00A75though your wings will be gone until you \u00A7asleep\u00A75 again\u00A77. You also drop all of your hotbar items when cheating death."
 }

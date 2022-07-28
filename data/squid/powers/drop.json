@@ -10,20 +10,44 @@
 				}
 			},
 			{
-				"type": "origins:actor_action",
+				"type": "origins:target_action",
 				"action": {
-					"type": "origins:execute_command",
-					"command": "scale set pehkui:hitbox_height 1 @s",
-					"permission_level": 4
-				}	
+					"type": "origins:revoke_power",
+					"power": "squid:grapple",
+					"source": "squid:grapple"
+				}
 			}
 		]	
     },
-    "item_condition": {
-        "type": "origins:empty"
-    },
-	"condition": {
-		"type": "origins:sneaking"
+	"bientity_condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:sneaking",
+					"inverted": true	
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:passenger",
+					"comparison": ">",
+					"compare_to": 0
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:empty"
+					}	
+				}
+			}
+		]
 	},
     "hidden": true
 }

@@ -1,0 +1,116 @@
+{
+	"type": "origins:multiple",
+	"callbacks": {
+		"type": "origins:action_on_callback",
+		"entity_action_gained": {
+			"type": "origins:delay",
+			"ticks": 5,
+			"action": {
+				"type": "origins:execute_command",
+				"command": "title @s actionbar [\"\",{\"text\":\"SPAM \",\"color\":\"red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":\"If you try to dismount instead of using space, you will be stung!\"}},{\"text\":\"JUMP\",\"color\":\"dark_red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":\"If you try to dismount instead of using space, you will be stung!\"}},{\"text\":\" TO RELEASE YOURSELF!\",\"color\":\"red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":\"If you try to dismount instead of using space, you will be stung!\"}}]"
+			}
+		},
+		"entity_action_removed": {
+			"type": "origins:revoke_power",
+			"power": "squid:grapple",
+			"source": "squid:grapple"
+		},
+		"entity_action_respawned": {
+			"type": "origins:revoke_power",
+			"power": "squid:grapple",
+			"source": "squid:grapple"
+		}
+	},
+	"spam": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 100,
+		"start_value": 0,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 17
+		},
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:revoke_power",
+					"power": "squid:grapple",
+					"source": "squid:grapple"
+				},
+				{
+					"type": "origins:dismount"
+				}
+			]
+		}
+	},
+    "jump": {
+		"type":"origins:active_self",
+		"key": {
+			"key":"key.jump"
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_spam",
+			"operation": "add",
+			"change": 20
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+    "back": {
+		"type":"origins:active_self",
+		"key": {
+			"key": "key.sneak",
+			"continuous": true
+		},
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:riding_action",
+			"action": {
+				"type": "origins:passenger_action",
+				"bientity_action": {
+					"type": "origins:and",
+					"actions": [
+						{
+							"type": "origins:delay",
+							"ticks": 2,
+							"action": {
+								"type": "origins:mount"
+							}
+						},
+						{
+							"type": "origins:actor_action",
+							"action": {
+								"type": "origins:damage",
+								"amount": 2,
+								"source": {
+									"name": "sting",
+									"bypasses_armor": true
+								}	
+							}
+						}
+					]
+				}
+			}
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_spam",
+			"operation": "add",
+			"change": -5
+		},
+		"interval": 1
+	},
+	"hidden": true
+}

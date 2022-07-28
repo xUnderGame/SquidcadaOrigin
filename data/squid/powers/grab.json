@@ -10,48 +10,65 @@
 				}
 			},
 			{
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:grant_power",
+					"power": "squid:grapple",
+					"source": "squid:grapple"
+				}
+			},
+			{
 				"type": "origins:actor_action",
 				"action": {
-					"type": "origins:execute_command",
-					"command": "scale set pehkui:hitbox_height 0.9 @s",
-					"permission_level": 4
+					"type": "origins:trigger_cooldown",
+					"power": "squid:grab-var"
 				}
 			}
 		]
     },
-    "item_condition": {
-        "type": "origins:empty"
-    },
 	"bientity_condition": {
-		"type": "origins:and",
-		"conditions" : [
+			"type": "origins:and",
+			"conditions": [
 			{
-				"type": "origins:and",
-				"conditions": [
-					{
-						"type": "origins:actor_condition",
-						"condition": {
-							"type": "origins:sneaking",
-							"inverted": true	
-						}
-					},
-					{
-						"type": "origins:actor_condition",
-						"condition": {
-							"type": "origins:passenger",
-							"comparison": "<",
-							"compare_to": 1
-						}
-					},
-					{
-						"type": "origins:actor_condition",
-						"condition": {
-							"type": "origins:health",
-							"comparison": ">",
-							"compare_to": 2
-						}
-					}
-				]
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:passenger",
+					"comparison": "<",
+					"compare_to": 1
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:sneaking"
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:health",
+					"comparison": ">",
+					"compare_to": 2
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:resource",
+					"resource": "squid:grab-var",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			},
+			{
+				"type": "origins:actor_condition",
+				"condition": {
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:empty"
+					}	
+				}
 			},
 			{
 				"type": "origins:target_condition",
@@ -180,10 +197,6 @@
 						},
 						{
 							"type": "origins:entity_type",
-							"entity_type": "minecraft:enderman"
-						},
-						{
-							"type": "origins:entity_type",
 							"entity_type": "minecraft:zombified_piglin"
 						},
 						{
@@ -245,6 +258,10 @@
 						{
 							"type": "origins:entity_type",
 							"entity_type": "minecraft:wither_skeleton"
+						},
+						{
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:player"
 						}
 					]
 				}
@@ -253,5 +270,5 @@
 	},
 	"hidden": false,
 	"name": "Grab",
-	"description": "You can grab most living entities by right clicking them, shift and right click to drop."
+	"description": "You can grab all not-so-heavy entities by SHIFT + right clicking them. Right click WITHOUT SHIFTING to drop. Grabbed players will get 'grappled' and won't be able to escape unless they spam spacebar."
 }
