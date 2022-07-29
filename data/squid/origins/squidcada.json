@@ -8,6 +8,7 @@
 		"origins:climbing",
 		"squid:death-var",
 		"squid:grab-var",
+		"squid:drop-var",
 		"squid:cheating-death",
 		"squid:safety-landing",
         "squid:smaller",

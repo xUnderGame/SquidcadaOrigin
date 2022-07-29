@@ -1,12 +1,12 @@
 {
     "type": "origins:cooldown",
-    "cooldown": 300,
+    "cooldown": 30,
     "hud_render": {
 			"should_render": true,
 			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-			"bar_index": 16
+			"bar_index": 17
     },
     "hidden": true,
-    "name": "Grab Variable",
-    "description": "A variable that represents if the Squidcada can grab other entities."
+    "name": "Drop Variable",
+    "description": "A variable that represents if the Squidcada can drop other entities."
 }

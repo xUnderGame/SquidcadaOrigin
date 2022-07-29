@@ -108,7 +108,7 @@
 			"type": "origins:change_resource",
 			"resource": "*:*_spam",
 			"operation": "add",
-			"change": -5
+			"change": -6
 		},
 		"interval": 1
 	},

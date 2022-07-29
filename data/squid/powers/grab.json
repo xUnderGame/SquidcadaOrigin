@@ -23,6 +23,13 @@
 					"type": "origins:trigger_cooldown",
 					"power": "squid:grab-var"
 				}
+			},
+			{
+				"type": "origins:actor_action",
+				"action": {
+					"type": "origins:trigger_cooldown",
+					"power": "squid:drop-var"
+				}
 			}
 		]
     },
@@ -35,12 +42,6 @@
 					"type": "origins:passenger",
 					"comparison": "<",
 					"compare_to": 1
-				}
-			},
-			{
-				"type": "origins:actor_condition",
-				"condition": {
-					"type": "origins:sneaking"
 				}
 			},
 			{

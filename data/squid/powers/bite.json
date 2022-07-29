@@ -58,7 +58,7 @@
 					},
 					{
 						"type": "origins:damage",
-						"amount": 5,
+						"amount": 6,
 						"source": {
 							"name": "generic.player",
 							"bypasses_armor": true,
@@ -70,14 +70,14 @@
 						"effects": [
 							{
 								"effect": "minecraft:blindness",
-								"duration": 60,
+								"duration": 80,
 								"is_ambient": true,
 								"show_particles": false,
 								"show_icon": false
 							},
 							{
 								"effect": "minecraft:weakness",
-								"duration": 80,
+								"duration": 100,
 								"is_ambient": true,
 								"show_particles": false,
 								"show_icon": true
@@ -88,7 +88,7 @@
 			}
 		}
 	},
-	"cooldown": 600,
+	"cooldown": 500,
     "hud_render": {
         "should_render": true,
 		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
